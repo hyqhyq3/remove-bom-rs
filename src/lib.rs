@@ -22,7 +22,7 @@ fn remove_bom_impl(file_name :&str) -> bool {
         let mut old_file = File::open(tmpname.as_str()).unwrap();
         let mut file = File::create(file_name).unwrap();
         old_file.seek(SeekFrom::Start(3)).unwrap();
-        io::copy(&mut old_file, &mut file);
+        io::copy(&mut old_file, &mut file).unwrap();
     }
     fs::remove_file(tmpname.as_str()).unwrap();
     true

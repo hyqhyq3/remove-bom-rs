@@ -2,7 +2,7 @@
 description = "a command line tool to remove BOM in utf8 files"
 name = "remove-bom"
 version = "0.1.0"
-license = "BSD"
+license = "BSD-2-Clause"
 repository = "https://github.com/hyqhyq3/remove-bom-rs"
 authors = ["hyq"]
 

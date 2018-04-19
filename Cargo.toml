@@ -1,0 +1,13 @@
+[package]
+name = "remove-bom"
+version = "0.1.0"
+authors = ["hyq"]
+
+[[bin]]
+name="remove-bom"
+path="src/main.rs"
+
+[dependencies]
+walkdir = "2"
+structopt = "0.2"
+regex = "0.2"

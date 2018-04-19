@@ -17,14 +17,14 @@ fn check_bom(file_name :&str) -> bool {
 fn remove_bom_impl(file_name :&str) -> bool {
     let tmpname = file_name.to_owned() + ".tmp";
     {
-        fs::rename(file_name, tmpname.as_str());
+        fs::rename(file_name, tmpname.as_str()).unwrap();
 
         let mut old_file = File::open(tmpname.as_str()).unwrap();
         let mut file = File::create(file_name).unwrap();
-        old_file.seek(SeekFrom::Start(3));
+        old_file.seek(SeekFrom::Start(3)).unwrap();
         io::copy(&mut old_file, &mut file);
     }
-    fs::remove_file(tmpname.as_str());
+    fs::remove_file(tmpname.as_str()).unwrap();
     true
 }
 
